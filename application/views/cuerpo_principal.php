@@ -25,7 +25,7 @@
                     </button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-nav">
+                    <button type="button" class="btn btn-nav" onclick="window.location='<?php echo base_url(); ?>con_alertas/'">
                         <span class="glyphicon glyphicon-bullhorn"></span>
                   <p>Alertas</p>
                     </button>

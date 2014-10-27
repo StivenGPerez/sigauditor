@@ -1,7 +1,10 @@
 <section class="container sombra">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-	        <h3 class="panel-title"><span class="glyphicon glyphicon-signal"></span> Graficas</h3>
+	        <span class="glyphicon glyphicon-signal"></span> <strong>Graficas</strong>
+	        <a href="#" onclick="javascript:volver();">
+	        	<span class='pull-right label label-danger'><h5><i class="glyphicon glyphicon-chevron-left"></i><strong>Volver</strong></h5></span>
+	        </a>
 	    </div>
 	  	<div class="panel-body">
 		
@@ -104,7 +107,10 @@
 
 	  	</div>
 	  	<div class="panel-footer">
-	  		<a href="<?php echo base_url(); ?>index.php/inicio/principal" class="btn btn-danger btn-block">Volver</a>
+	  		<button type="button" class="btn btn-hot text-uppercase btn-block" onclick="javascript:volver();">
+				<i class="glyphicon glyphicon-chevron-left"></i>
+				 Volver 
+			</button>
 	  	</div>
 	</div>
 </section>

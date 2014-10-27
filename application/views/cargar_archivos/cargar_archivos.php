@@ -2,10 +2,10 @@
 	
 	<div class="panel panel-warning">
 		<div class="panel-heading">
-	        <h3 class="panel-title">
-	        <span class="glyphicon glyphicon-upload"></span> Carga de Archivos
-			<span class="pull-right glyphicon glyphicon-pushpin"></span>
-	        </h3>
+	        <span class="glyphicon glyphicon-upload"></span> <strong>Carga de Archivos</strong>
+			<a href="#" onclick="javascript:volver();">
+	        	<span class='pull-right label label-danger'><h5><i class="glyphicon glyphicon-chevron-left"></i><strong>Volver</strong></h5></span>
+	        </a>
 	    </div>
 	  <div class="panel-body">
 	  

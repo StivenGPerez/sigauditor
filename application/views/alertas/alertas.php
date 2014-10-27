@@ -2,7 +2,7 @@
 	
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-	        <span class="glyphicon glyphicon-search"></span> <strong>Hallazgos</strong>
+	        <span class="glyphicon glyphicon-search"></span> <strong>Alertas</strong>
 	        <a href="#" onclick="javascript:volver();">
 	        	<span class='pull-right label label-danger'><h5><i class="glyphicon glyphicon-chevron-left"></i><strong>Volver</strong></h5></span>
 	        </a>
@@ -14,7 +14,7 @@
 		
 	<div class="row">
 		<div class="col-lg-9">
-			<p><strong>Este módulo le brinda la posibilidad de encontrar las posibles inconsistencias en la información</strong></p>
+			<p><strong>Este módulo le brinda la posibilidad de encontrar las posibles alertas en la información</strong></p>
 			<p>Por favor seleccione la empresa a verificar</p>
 		</div>
 		
@@ -28,20 +28,13 @@
 				<tr>
 					<td><strong>Empresa: </strong></td>
 					<td>
-						<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos_hallazgos();" required="required">
+						<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos_alertas();" required="required">
 						<option value="-1" selected="selected">Seleccione Empresa</option>
 							<?php 
-								/*if(isset($nom_empresa)){
-									echo "<option value='$empresa_id' selected>$nom_empresa</option>";
-								}else{
-									echo "<option value='-1' selected>Seleccione..</option>";
-								}*/
-
 				    			foreach($empresas as $emp){
 				       				echo "<option value='".$emp->emp_id."'>".$emp->emp_nombre."</option>";
 			     				}
-			     				
-			     				?>
+			     			?>
 			     		</select>
 			     	</td>
 			     	<td><strong>Innterventoria: </strong></td>
@@ -49,20 +42,11 @@
 						<div id="interven">
 							<select id='interventoria' name='interventoria' class='form-control' required="required">
 							<option value="-1" selected="selected">Seleccione Interventoría</option>
-							<?php /* 
-								if(isset($inter_nom) and isset($inter_id)){
-									echo "<optgroup label='$nom_empresa'>";
-									echo "<option value='$inter_id' selected>$inter_nom</option>";
-									echo "</optgroup>";
-								}else{
-									echo "<option value='-1' selected>Seleccione..</option>";
-								}*/
-							?>
 							</select>
 						</div>
 					</td>
 					<td>
-					<button type="button" class="btn btn-fresh text-uppercase btn-sm" onclick="hallazgos();">
+					<button type="button" class="btn btn-fresh text-uppercase btn-sm" onclick="alertas();">
 					 	Ver 
 					 	<i class="glyphicon glyphicon-search"></i>
 					 </button>
@@ -80,19 +64,8 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-12" id="hallazgos"></div>
+		<div class="col-lg-12" id="alertas"></div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 	</div>

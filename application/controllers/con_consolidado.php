@@ -6,11 +6,10 @@ class Con_consolidado extends CI_Controller {
 		parent::__construct();
 		$this->load->model('mod_consolidado');
         $this->load->model('mod_interventoria');
+        $this->load->model('mod_modulo_carga');
         $this->load->library('grocery_CRUD');
 	}
 	public function index(){
-        
-        $this->load->model('mod_modulo_carga');
         $data['empresas']=$this->mod_modulo_carga->get_empresas();
 
 		$this->load->view('header');
