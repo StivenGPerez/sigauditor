@@ -5,8 +5,6 @@ function crearempresa()
 	var	nombre = document.getElementById('emp_nombre').value;
 	var direccion = document.getElementById('emp_dir').value;
 	var	telefono = document.getElementById('emp_tel').value;
-	//var	usuario = '2';
-	//var check = document.getElementById('id_check').checked;
 
 	if (nit != 0)
 	{
@@ -14,8 +12,7 @@ function crearempresa()
 		{
 			if (confirm("¿Desea adicionar la empresa?"))
 			{
-				$.post(baseurl+'index.php/con_empresa/crear_empresa', {'emp_nit':nit, 'emp_nombre':nombre, 'emp_dir':direccion, 'emp_tel':telefono}, //'usuario':usuario, 'check':check, 
-
+				$.post(baseurl+'index.php/con_empresa/crear_empresa', {'emp_nit':nit, 'emp_nombre':nombre, 'emp_dir':direccion, 'emp_tel':telefono}, 
 				function(data)
 				{
 					$('#empresa_dos').html(data);
@@ -166,8 +163,6 @@ $('#dave').mousedown(function () {
   }
   
 });
-
-
 
 /*   //Ocultar Tabla En el Index y habilitar por medio de un div
 function tablaoculta()

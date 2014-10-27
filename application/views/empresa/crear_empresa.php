@@ -6,6 +6,15 @@
 	        <span class="glyphicon glyphicon-upload"></span> Registrar Empresa</h3> 
 	    </div>
 		<div class="panel-body">
+          
+          <div class="row">
+              <div class="col-lg-9">
+                <p><strong>En este módulo usted podrá ingresar y modificar las empresas con las cuales hay contratos vigentes.</strong></p>
+                <p>Por favor diligenciar todos los campo que se encuentran en este modulo</p>
+              </div>
+              <div class="col-lg-3" id="logosig"><img src="<?php echo base_url(); ?>/img/logoweb.png" class="img-responsive"></div>
+          </div></br>
+
 			<div class="row">
 				<div class="col-lg-12">
 					<div id="empresa_dos">
