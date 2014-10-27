@@ -9,7 +9,7 @@ function verificar_si_debe_cargar(){
         });
 }
 
-function consecutivos(){
+function consecutivos_carga(){
     //alert("hola");
 
     var emp_id =document.getElementById("emp_id").value;
@@ -61,7 +61,7 @@ function cruzar_informacion(){
 
 
 //funcion javascript que envia el formulario al controlador que maneja contratista
-function enviar_contratista(){
+function registrar_contratista(){
     var empresa =document.getElementById("emp_id").value;
     var inter_id =document.getElementById("interventoria").value;
     

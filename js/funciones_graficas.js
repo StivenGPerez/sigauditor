@@ -8,16 +8,10 @@ function graficar(){
     	
     	dis_per_act(inter_id);
     	dis_tp_mobra(inter_id);
-    	
     	top_20_cargos_moc(inter_id);
     	veredas_rem(inter_id);
-
-        
     }           
 }
-
-
-
 
 
 function consecutivos_graficas(){

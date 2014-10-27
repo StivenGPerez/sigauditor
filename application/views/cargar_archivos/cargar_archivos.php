@@ -24,7 +24,7 @@
 			<tr>
 				<td><strong>Empresa: </strong></td>
 				<td>
-					<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos();">
+					<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos_carga();">
 						<?php 
 							if(isset($nom_empresa)){
 								echo "<option value='$empresa_id' selected>$nom_empresa</option>";
@@ -118,9 +118,9 @@
           <tr>
           	<td>
           	<?php if(isset($can_con) && $can_con>0){ ?>
-          	<button type="button" name="but_con" class="btn btn-success btn-lg btn-block" disabled onclick="enviar_contratista();">Archivo Cargado <i class="glyphicon glyphicon-ok"></i></button>
+          	<button type="button" name="but_con" class="btn btn-success btn-lg btn-block" disabled onclick="registrar_contratista();">Archivo Cargado <i class="glyphicon glyphicon-ok"></i></button>
           	<?php }else{ ?>
-          	<button type="button" name="but_con" class="btn btn-primary btn-lg btn-block" onclick="enviar_contratista();"><i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
+          	<button type="button" name="but_con" class="btn btn-primary btn-lg btn-block" onclick="registrar_contratista();"><i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
           	<?php } ?>
           	</td>
           	<td>

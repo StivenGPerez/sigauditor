@@ -17,45 +17,29 @@
 		  	</div>
  
 		  	<div class="row">
-			<div class="col-lg-12"> 
-		<!--<form action="<?php echo base_url(); ?>index.php/con_consolidado/consolidado" name="form1" id="form1" method='post' enctype="multipart/form-data">-->
-			<table class="table table-striped">
-				<tr>
-					<td><strong>Empresa: </strong></td>
-					<td>
-						<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos_graficas();" required="required">
-						<option value="-1" selected="selected">Seleccione Empresa</option>
-							<?php 
-								/*if(isset($nom_empresa)){
-									echo "<option value='$empresa_id' selected>$nom_empresa</option>";
-								}else{
-									echo "<option value='-1' selected>Seleccione..</option>";
-								}*/
-
-				    			foreach($empresas as $emp){
+				<div class="col-lg-12"> 
+		
+					<table class="table table-striped">
+						<tr>
+							<td><strong>Empresa: </strong></td>
+							<td>
+								<select class="form-control" id="emp_id" name="emp_id" onchange="consecutivos_graficas();" required="required">
+								<option value="-1" selected="selected">Seleccione Empresa</option>
+								<?php 
+				    				foreach($empresas as $emp){
 				       				echo "<option value='".$emp->emp_id."'>".$emp->emp_nombre."</option>";
-			     				}
-			     				
+			     					}
 			     				?>
-			     		</select>
-			     	</td>
-			     	<td><strong>Innterventoria: </strong></td>
-			     	<td>
-						<div id="interven">
-							<select id='interventoria' name='interventoria' class='form-control' required="required">
-							<option value="-1" selected="selected">Seleccione Interventoría</option>
-							<?php /* 
-								if(isset($inter_nom) and isset($inter_id)){
-									echo "<optgroup label='$nom_empresa'>";
-									echo "<option value='$inter_id' selected>$inter_nom</option>";
-									echo "</optgroup>";
-								}else{
-									echo "<option value='-1' selected>Seleccione..</option>";
-								}*/
-							?>
-							</select>
-						</div>
-					</td>
+			     				</select>
+			     			</td>
+			     			<td><strong>Innterventoria: </strong></td>
+			     			<td>
+								<div id="interven">
+									<select id='interventoria' name='interventoria' class='form-control' required="required">
+										<option value="-1" selected="selected">Seleccione Interventoría</option>
+									</select>
+								</div>
+							</td>
 					<td>
 					<button type="button" class="btn btn-fresh text-uppercase btn-sm" onclick="graficar();">
 					 	Ver 
@@ -74,36 +58,16 @@
 		</div>
 			</div>
 
-			<!--<div id="excel"></div>-->
-
-			<!--<div class="col-lg-12">-->
 			
 			<div class="row">
-				<div class="col-lg-12"><div id="top_20_moc" style="width:100%; height:350px;"></div></div>
-				<div class="col-lg-12"><div id="veredas_rem" style="width:100%; height:350px;"></div></div>
+				<div class="col-lg-12"><div id="top_20_moc" style="width:100%; height:350px; display: none;"></div></div>
+				<div class="col-lg-12"><div id="veredas_rem" style="width:100%; height:350px; display: none;"></div></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6"><div id="dis_per_act" style="width:100%; height:500px;"></div></div>
-				<div class="col-lg-6"><div id="dis_tp_mobra" style="width:100%; height:400px;"></div></div>
+				<div class="col-lg-6"><div id="dis_per_act" style="width:100%; height:500px; display: none;"></div></div>
+				<div class="col-lg-6"><div id="dis_tp_mobra" style="width:100%; height:400px; display: none;"></div></div>
 			</div>
 			
-				
-				
-			   	
-			   
-			<!--</div>-->
-			
-			
-			
-			
-
- 
-
-			
-
- 	
-
-
 
 	  	</div>
 	  	<div class="panel-footer">

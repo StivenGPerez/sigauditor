@@ -48,10 +48,10 @@
             <tr>
             <td>
             <?php if(isset($can_con) && $can_con>0){ ?>
-            <button type="button" name="but_con" class="btn btn-success btn-lg btn-block" disabled onclick="enviar_contratista();">
+            <button type="button" name="but_con" class="btn btn-success btn-lg btn-block" disabled onclick="registrar_contratista();">
             Archivo Cargado <i class="glyphicon glyphicon-ok"></i></button>
             <?php }else{ ?>
-            <button type="button" name="but_con" class="btn btn-primary btn-lg btn-block" onclick="enviar_contratista();">
+            <button type="button" name="but_con" class="btn btn-primary btn-lg btn-block" onclick="registrar_contratista();">
             <i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
             <?php } ?>
             </td>

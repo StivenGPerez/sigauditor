@@ -6,7 +6,7 @@ class Con_alertas extends CI_Controller {
 		$this->load->model('mod_modulo_carga');
 		$this->load->model('mod_interventoria');
 		$this->load->model('mod_alertas');
-	}
+	} 
 
 	public function index(){
         $data['empresas']=$this->mod_modulo_carga->get_empresas();
@@ -35,6 +35,8 @@ class Con_alertas extends CI_Controller {
 		$inter_id=$this->input->post('inter_id');
 		
 		$data['alerta1']=$this->mod_alertas->activos_andromeda_informacion_faltante($inter_id);
+		$data['alerta2']=$this->mod_alertas->cedulas_repetidas($inter_id);
+		
 	
 
 		$html=$this->load->view('alertas/alertas_ajax',$data,'true');
