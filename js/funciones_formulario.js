@@ -81,6 +81,7 @@ function insertar_empleado(frm)
   }else{alert("Debe Ingresar Un Empleador.");}
 }
 
+
 function enviar_contratista()
 {
 //  alert("hola");

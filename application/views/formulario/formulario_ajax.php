@@ -114,7 +114,7 @@
 
     <form action="<?php echo base_url(); ?>index.php/con_formulario/cargar_excel_contr" name="form_con" id="form_con" method='post' enctype="multipart/form-data">
         <input type="file" name="ruta_contratista" id="ruta_contratista"><button type="button" name="button_con" class="btn btn-primary active" onclick="enviar_contratista();"><i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
-    </form>                 
-
+        <bottom type="buttom" id="formulario_excel" class="btn btn-primary active" onclick="location.href='<?php echo base_url(); ?>documentos/Planilla_excel.xlsx'">DESCARGAR FORMULARIO EXCEL</bottom>   
+    </form>               
 </div>
 </div>

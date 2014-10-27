@@ -23,7 +23,9 @@
         <script src="<?php echo base_url(); ?>js/funciones_consolidado.js"></script>
         <script src="<?php echo base_url(); ?>js/funciones_formulario.js"></script>
         <script src="<?php echo base_url(); ?>js/funciones_alertas.js"></script>
-       
+
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/validate.js" language="JavaScript"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/validator.js" language="JavaScript"></script>       
 
         <script type="text/javascript" src="http://code.highcharts.com/stock/highstock.js"></script>
         <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
