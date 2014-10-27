@@ -77,7 +77,7 @@
                                     <tr>
                                         <td><label for="">Tipo Contrato: </label></td>
                                             <td>
-                                            <select class="form-control" Tabindex="9" id="con_tp_contrato" > <!-- Variable con_lug_nac-->
+                                            <select class="selectpicker" Tabindex="9" id="con_tp_contrato" data-width="190px"> <!-- Variable con_lug_nac-->
                                                 <?php 
                                                 foreach ($tp_contrato as $key => $value):
                                                     echo "<option value=".$value->tp_contrato_id.">".$value->tp_contrato_nombre."</option>";
@@ -131,10 +131,7 @@
 
                 <form action="<?php echo base_url(); ?>index.php/con_formulario/index" name="form_con" id="form_con" method='post' enctype="multipart/form-data">
                     <input type="file" name="ruta_contratista" id="ruta_contratista"><button type="button" name="button_con" class="btn btn-primary active" onclick="enviar_contratista();"><i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
-                    <bottom type="buttom" id="formulario_excel" class="btn btn-primary active" onclick="location.href='<?php echo base_url(); ?>documentos/Planilla_excel.xlsx'">Descargar Formulario</bottom>   
                 </form>                 
-
-
         
             </div>
             </div>
