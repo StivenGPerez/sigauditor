@@ -7,8 +7,6 @@ class Mod_empresa extends CI_Model {
 	}
 	public function crearempresa($nit,$nombre,$direccion,$telefono,$usuario)
 	{
-		
-
 		$crearempresas = array(
 			'emp_nit' => $nit,
 			'emp_nombre' => $nombre,
@@ -17,7 +15,6 @@ class Mod_empresa extends CI_Model {
 			'usu_id' => $usuario);
 
 		return $this->db->insert('empresa', $crearempresas);	
-
 	}
 
 	public function lista_empresas()

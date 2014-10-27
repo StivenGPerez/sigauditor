@@ -31,7 +31,7 @@ class Con_empresa extends CI_Controller {
 		$data['crearempresa'] = $this->mod_empresa->crearempresa($nit, $nombre, $direccion, $telefono, $usuario);
 		$data['empresa'] = $this->mod_empresa->lista_empresas();
 
-		$vista_nueva = $this->load->view('empresa/crear_empresa',$data, true);
+		$vista_nueva = $this->load->view('empresa/crear_empresa_ajax',$data, true);
 		echo $vista_nueva;
 	}
 
