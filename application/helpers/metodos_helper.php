@@ -51,5 +51,23 @@ if(!function_exists('utf8_fopen_read')){
     } 
 }
 
-
+if(!function_exists('val_campos_excel'))
+{
+    //metodo para validar campos en blanco excel
+    function val_campos_excel($handle) 
+    { 
+        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE)
+        {
+            if($data[6] == '')
+            { 
+              return false;
+              breack; 
+            }
+            else
+            { 
+              return true;
+            }
+        }
+    } 
+}
 //end application/helpers/metodos_helper.php
