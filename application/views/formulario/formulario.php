@@ -1,8 +1,10 @@
 <div class="container sombra">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">
-            <span class="glyphicon glyphicon-cog"></span> Ingreso Empleados</h3>
+            <span class="glyphicon glyphicon-cog"></span> <strong>Ingreso Empleados</strong>
+            <a href="#" onclick="javascript:volver();">
+                <span class='pull-right label label-danger'><h5><i class="glyphicon glyphicon-chevron-left"></i><strong>Volver</strong></h5></span>
+            </a>
         </div>
 
         <div class="panel-body">
@@ -10,7 +12,7 @@
           <div class="row">
               <div class="col-lg-9">
                 <p><strong>En este módulo usted podrá ingresar cada uno de los EMPLEADOS que trabajan para su compañía y/o empresa.</strong></p>
-                <p>Por favor debe diligenciar todos los campo que se encuentran en este modulo</p>
+                <p>Por favor debe diligenciar todos los campos que se encuentran en este modulo</p>
               </div>
               <div class="col-lg-3" id="logosig"><img src="<?php echo base_url(); ?>/img/logoweb.png" class="img-responsive" alt=""></div>
           </div>  
@@ -146,7 +148,10 @@
 	    </div>
                     
         <div class="panel-footer">
-			<a href="javascript:volver();" class="btn btn-danger btn-block"><strong>Volver</strong></a>
+		<button type="button" class="btn btn-hot text-uppercase btn-block" onclick="javascript:volver();">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+             Volver 
+        </button>
         </div>        
 
     </div>

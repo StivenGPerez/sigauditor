@@ -10,12 +10,12 @@
 	<div class="panel-body">
 	  
  
-
+ 
 		
 	<div class="row">
 		<div class="col-lg-9">
-			<p><strong>Este módulo le brinda la posibilidad de encontrar las posibles alertas en la información</strong></p>
-			<p>Por favor seleccione la empresa a verificar</p>
+			<p><strong>Este módulo le brinda la posibilidad de encontrar las posibles alertas en la información registrada.</strong></p>
+			<p>Por favor seleccione la empresa y la interventoria a verificar</p>
 		</div>
 		
 		<div class="col-lg-3" id="logosig"><img src="<?php echo base_url(); ?>/img/logoweb.png" class="img-responsive" alt=""></div>
