@@ -1,0 +1,1 @@
+error de inicio, usuario y password incorrectos
