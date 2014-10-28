@@ -314,8 +314,25 @@ echo $objWriter->save('php://output');
 
         $datos=$this->mod_consolidado->crud_buscar($conso_id);
         //print_r(json_encode($datos));
-        $miArray = array("nombre"=>$datos[0]->conso_nombre, "cedula"=>$datos[0]->conso_cedula);
-        print_r(json_encode($miArray));
+        
+        $persona = array(
+            "nombre"=>$datos[0]->conso_nombre,
+            "lug_nac"=>$datos[0]->conso_lug_nac,
+            "cedula"=>$datos[0]->conso_cedula,
+            "ced_exp"=>$datos[0]->conso_ced_exp,
+            "cargo"=>$datos[0]->conso_cargo,
+            "per_sol"=>$datos[0]->conso_per_sol,
+            "tp_mobra"=>$datos[0]->conso_tp_mobra,
+            "tp_contrato"=>$datos[0]->conso_tp_contrato,
+            "base_org"=>$datos[0]->conso_base_org,
+            "paso_rsc"=>$datos[0]->conso_paso_rsc,
+            "sp"=>$datos[0]->conso_sp,
+            "fecha_crea"=>$datos[0]->conso_fecha_crea_per,
+            "fecha_ini_cont"=>$datos[0]->conso_fecha_inicio_cont,
+            "fecha_fin_cont"=>$datos[0]->conso_fecha_final_cont
+        );
+
+        print_r(json_encode($persona));
     }
 
     public function crud_eliminar(){

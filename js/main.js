@@ -147,9 +147,53 @@ function crud_actualizar(id){
             '<div class="modal-content">' +
                 '<div class="modal-header modal-header-info">' +
                     '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' +
-                    '<h1><i class="glyphicon glyphicon-thumbs-up"></i> <span></span></h1>' +
+                    '<h1><i class="glyphicon glyphicon-refresh"></i> Actualizar persona</h1>' +
                 '</div>' +
                 '<div class="modal-body">' +
+
+
+                	'<table class="table">' +
+						'<tr>' +
+							'<td align="right"><strong>Nombre:</strong></td>' +
+							'<td><input type="text" value="'+json.nombre+'" size="" style="width:100%"></td>' +
+							'<td align="right"><strong>Lugar Nacimiento:</strong></td>' +
+							'<td><input type="text" value="'+json.lug_nac+'" size="" style="width:100%"></td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td align="right"><strong>Cedula:</strong></td>' +
+							'<td><input type="text" value="'+json.cedula+'" size="" style="width:50%"></td>' +
+							'<td align="right"><strong>Lugar de Expedición:</strong></td>' +
+							'<td><input type="text" value="'+json.ced_exp+'" size="" style="width:100%"></td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td align="right"><strong>Cargo:</strong></td>' +
+							'<td><input type="text" value="'+json.cargo+'" size="" style="width:100%"></td>' +
+							'<td align="right"><strong>Perfil solicitado:</strong></td>' +
+							'<td><input type="text" value="'+json.per_sol+'" size="" style="width:100%"></td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td align="right"><strong>Tipo mano de obra:</strong></td>' +
+							'<td><input type="text" value="'+json.tp_mobra+'" size="" style="width:50%"> <small>(MONC o MOC)</small></td>' +
+							'<td align="right"><strong>Tipo de contrato:</strong></td>' +
+							'<td><input type="text" value="'+json.tp_contrato+'" size="" style="width:100%"></td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td align="right"><strong>Bd. Origen:</strong></td>' +
+							'<td><input type="text" value="'+json.base_org+'" size="" style="width:100%"></td>' +
+							'<td align="right" colspan="2">'+
+							'<strong>Paso RSC:</strong><input type="text" value="'+json.paso_rsc+'" size="" style="width:30%">'+
+							'<strong>SP:</strong><input type="text" value="'+json.sp+'" size="" style="width:30%">'+
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td colspan="4">'+
+								'<strong>Fecha Creacion:</strong><input class="form-control" type="date" value="'+json.fecha_crea+'"> '+
+								'<strong>Inicio contrato:</strong><input type="date" value="'+json.fecha_ini_cont+'"> '+
+								'<strong>Final contrato:</strong><input type="date" value="'+json.fecha_fin_cont+'"> '+
+							'</td>' +
+						'</tr>' +
+					'</table>' +
+
 
                 '</div>' +
                 '<div class="modal-footer">' +
