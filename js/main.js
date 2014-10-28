@@ -136,76 +136,124 @@ function crud_eliminar(id){
 	}
 }
 
+
 function crud_actualizar(id){
+	if(confirm("¿Confirma la actualización los datos?")){
+
 	
-		$.getJSON(baseurl+'index.php/con_consolidado/crud_buscar', {'conso_id': id}, function(json){
+	var nombre=document.getElementById('conso_nombre').value;
+	var lug_nac=$("#lug_nac").attr("value");
+	var cedula=$("#cedula").attr("value");
+	var ced_exp=$("#ced_exp").attr("value");
+	var cargo=$("#cargo").attr("value");
+	var per_sol=$("#per_sol").attr("value");
+	var tp_mobra=$("#tp_mobra").attr("value");
+	var tp_contrato=$("#tp_contrato").attr("value");
+	var base_org=$("#base_org").attr("value");
+	var paso_rsc=$("#paso_rsc").attr("value");
+	var sp=$("#sp").attr("value");
+	var frente_trabajo=$("#frente_trabajo").attr("value");
+	var campo=$("#campo").attr("value");
+	var comunidad=$("#comunidad").attr("value");
+	var fecha_crea=$("#fecha_crea").attr("value");
+	var fecha_ini_cont=$("#fecha_ini_cont").attr("value");
+	var fecha_fin_cont=$("#fecha_fin_cont").attr("value");
+alert(nombre);
+		$.getJSON(baseurl+'index.php/con_consolidado/crud_actualizar', 
+				{'nombre': nombre, 'conso_id': id}, 
+		function(json){
+			//document.getElementById(id).style.display = 'none';
+			//if(json==true)crud_confirmar.show('Persona actualizada con éxito');
+			alert(json);
+		});
+	}
+}
+
+function crud_buscar(id){
+	
+	$.getJSON(baseurl+'index.php/con_consolidado/crud_buscar', {'conso_id': id}, function(json){
 			//alert(json.nombre);
 
-
-			var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
+var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
         '<div class="modal-dialog modal-lg">' +
             '<div class="modal-content">' +
                 '<div class="modal-header modal-header-info">' +
                     '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' +
-                    '<h1><i class="glyphicon glyphicon-refresh"></i> Actualizar persona</h1>' +
+                    '<h4><i class="glyphicon glyphicon-refresh"></i> Actualizar persona</h4>' +
                 '</div>' +
                 '<div class="modal-body">' +
-
 
                 	'<table class="table">' +
 						'<tr>' +
 							'<td align="right"><strong>Nombre:</strong></td>' +
-							'<td><input type="text" value="'+json.nombre+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="conso_nombre" id="conso_nombre" class="form-control" value="'+json.nombre+'" size="" style="width:100%"></td>' +
 							'<td align="right"><strong>Lugar Nacimiento:</strong></td>' +
-							'<td><input type="text" value="'+json.lug_nac+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="lug_nac" id="lug_nac" class="form-control" value="'+json.lug_nac+'" size="" style="width:100%"></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td align="right"><strong>Cedula:</strong></td>' +
-							'<td><input type="text" value="'+json.cedula+'" size="" style="width:50%"></td>' +
+							'<td><input type="text" name="cedula" id="cedula" class="form-control" value="'+json.cedula+'" size="" style="width:100%"></td>' +
 							'<td align="right"><strong>Lugar de Expedición:</strong></td>' +
-							'<td><input type="text" value="'+json.ced_exp+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="ced_exp" id="ced_exp" class="form-control" value="'+json.ced_exp+'" size="" style="width:100%"></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td align="right"><strong>Cargo:</strong></td>' +
-							'<td><input type="text" value="'+json.cargo+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="cargo" id="cargo" class="form-control" value="'+json.cargo+'" size="" style="width:100%"></td>' +
 							'<td align="right"><strong>Perfil solicitado:</strong></td>' +
-							'<td><input type="text" value="'+json.per_sol+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="per_sol" id="per_sol" class="form-control" value="'+json.per_sol+'" size="" style="width:100%"></td>' +
 						'</tr>' +
 						'<tr>' +
-							'<td align="right"><strong>Tipo mano de obra:</strong></td>' +
-							'<td><input type="text" value="'+json.tp_mobra+'" size="" style="width:50%"> <small>(MONC o MOC)</small></td>' +
-							'<td align="right"><strong>Tipo de contrato:</strong></td>' +
-							'<td><input type="text" value="'+json.tp_contrato+'" size="" style="width:100%"></td>' +
+							'<td align="right"><strong>Mano de obra:</strong><br><small>(MONC o MOC)</small></td>' +
+							'<td><input type="text" name="tp_mobra" id="tp_mobra" class="form-control" value="'+json.tp_mobra+'" size="" style="width:100%"> </td>' +
+							'<td align="right"><strong>Contrato:</strong></td>' +
+							'<td><input type="text" name="tp_contrato" id="tp_contrato" class="form-control" value="'+json.tp_contrato+'" size="" style="width:100%"></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td align="right"><strong>Bd. Origen:</strong></td>' +
-							'<td><input type="text" value="'+json.base_org+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="base_org" id="base_org" class="form-control" value="'+json.base_org+'" size="" style="width:100%"></td>' +
 							'<td align="right" colspan="2">'+
-							'<strong>Paso RSC:</strong><input type="text" value="'+json.paso_rsc+'" size="" style="width:30%">'+
-							'<strong>SP:</strong><input type="text" value="'+json.sp+'" size="" style="width:30%">'+
+						'<table>'+
+							'<tr>'+
+								'<td align="right"><strong>Paso RSC:</strong></td><td align="right"><input type="text" name="paso_rsc" id="paso_rsc" class="form-control" value="'+json.paso_rsc+'" size="" style="width:90%"></td>'+
+								'<td align="right"><strong>SP:</strong></td><td align="right"><input type="text" name="sp" id="sp" class="form-control" value="'+json.sp+'" size="" style="width:90%"></td>'+
+							'</tr>'+
+						'</table>'+
 							'</td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td colspan="4">'+
-								'<strong>Fecha Creacion:</strong><input class="form-control" type="date" value="'+json.fecha_crea+'"> '+
-								'<strong>Inicio contrato:</strong><input type="date" value="'+json.fecha_ini_cont+'"> '+
-								'<strong>Final contrato:</strong><input type="date" value="'+json.fecha_fin_cont+'"> '+
+								'<table class="table">'+
+									'<tr>'+
+										'<td align="right"><strong>Frente de trabajo: </strong></td><td align="right"><input class="form-control" type="text" name="frente_trabajo" id="frente_trabajo" value="'+json.frente_trabajo+'"> </td>'+
+										'<td align="right"><strong>Campo: </strong></td><td align="right"><input class="form-control" type="text" name="campo" id="campo" value="'+json.campo+'"> </td>'+
+										'<td align="right"><strong>Comunidad:v</strong></td><td align="right"><input class="form-control" type="text" name="comunidad" id="comunidad" value="'+json.comunidad+'"></td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td align="right"><strong>Fecha Creacion: </strong></td><td align="right"><input class="form-control" type="date" name="fecha_crea" id="fecha_crea" value="'+json.fecha_crea+'"> </td>'+
+										'<td align="right"><strong>Inicio contrato: </strong></td><td align="right"><input class="form-control" type="date" name="fecha_ini_cont" id="fecha_ini_cont" value="'+json.fecha_ini_cont+'"> </td>'+
+										'<td align="right"><strong>Fin contrato: </strong></td><td align="right"><input class="form-control" type="date" name="fecha_fin_cont" id="fecha_fin_cont" value="'+json.fecha_fin_cont+'"></td>'+
+									'</tr>'+
+								'</table>'+
 							'</td>' +
 						'</tr>' +
 					'</table>' +
 
-
                 '</div>' +
                 '<div class="modal-footer">' +
-                    '<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>' +
+                    '<button type="button" class="btn btn-hot pull-left text-uppercase btn-sm" data-dismiss="modal">Close</button>' +
+                    '<button type="button" class="btn btn-fresh pull-right text-uppercase btn-sm" data-dismiss="modal" onclick="crud_actualizar('+id+');">'+
+						'Actualizar '+
+						'<i class="glyphicon glyphicon-refresh"></i>'+
+					'</button>'+
                 '</div>' +
             '</div>' +
         '</div>' +
     '</div>');
+			
+//lanza el modal con las caracteristicas de la persona
+$dialog.modal();
 
-			$dialog.modal();
-
-		});
+	});
 }
 
 

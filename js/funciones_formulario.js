@@ -1,4 +1,4 @@
-$( ".selectpicker" ).selectpicker();
+$( ".select" ).selectpicker();
 
 function list_municipios()
 {

@@ -9,7 +9,7 @@
 	    </div>
 	  <div class="panel-body">
 	  
-
+ 
 	  <div class="row">
 		  <div class="col-lg-9">
 		  	<p><strong>En este módulo podrá cargar los archivos correspondientes a CONTRATISTA, ACTIVOS Y REMITIDOS.</strong></p>
@@ -29,7 +29,7 @@
 							if(isset($nom_empresa)){
 								echo "<option value='$empresa_id' selected>$nom_empresa</option>";
 							}else{
-								echo "<option value='-1' selected>Seleccione..</option>";
+								echo "<option value='-1' disabled='disabled' selected>Seleccione Empresa</option>";
 							}
 
 			    			foreach($empresas as $emp){

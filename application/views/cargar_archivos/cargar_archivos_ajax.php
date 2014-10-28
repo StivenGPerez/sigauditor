@@ -5,7 +5,7 @@
             <th>Archivo Personal Activo</th>
             <th>Archivo Personal Remitido</th>
           </tr>
-        </thead>
+        </thead> 
         <tbody>
           <tr>
             <td align="center">

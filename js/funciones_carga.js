@@ -23,12 +23,16 @@ function consecutivos_carga(){
 function nueva_interventoria(){
     var emp_id =document.getElementById("emp_id").value;
 
-
-    if(confirm("Está seguro de abrir un nuevo proceso interventor")){
-        $.post(baseurl+'index.php/con_modulo_carga/crear_interventoria',{'emp_id': emp_id},
-        function(data){     
-                $('#interven').html(data);        
-        });
+    if (emp_id==-1){
+        alert("Seleccione una empresa");
+        return false;
+    }else{
+        if(confirm("Está seguro de abrir un nuevo proceso interventor")){
+            $.post(baseurl+'index.php/con_modulo_carga/crear_interventoria',{'emp_id': emp_id},
+            function(data){     
+                    $('#interven').html(data);        
+            });
+        }
     }
 }
 

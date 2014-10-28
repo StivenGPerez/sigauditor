@@ -41,7 +41,7 @@
                                     <tr>
                                         <td><label for="">Lugar Nacimiento </label></td>
                                         <td>
-                                            <select class="selectpicker show-tick form-control" data-live-search="true" id="select_mun_nac" data-width="190px" Tabindex="5"> <!-- Variable con_lug_nac-->
+                                            <select class="select form-control" data-live-search="true" id="select_mun_nac" data-width="190px" Tabindex="5"> <!-- Variable con_lug_nac-->
                                                 <?php 
                                                 foreach ($municipios as $key => $value):
                                                     echo "<option value=".$value->mun_id.">".$value->mun_nombre."</option>";

@@ -26,6 +26,33 @@ class Mod_consolidado extends CI_Model {
         else
         	return FALSE;
 	}
+
+
+	public function crud_actualizar($conso_id, $nombre){
+
+		$data = array(
+				'conso_nombre' => $nombre /*, 'conso_lug_nac' => $lug_nac, 
+				'conso_cedula' => $cedula, 'conso_ced_exp' => $ced_exp,
+				'conso_cargo' => $cargo, 'conso_per_sol' => $per_sol,
+				'conso_tp_mobra' => $tp_mobra, 'conso_tp_contrato' => $tp_contrato,
+				'conso_base_org' => $base_org, 'conso_paso_rsc' => $paso_rsc,
+				'conso_sp' => $sp, 'conso_frente_trabajo' => $frente_trabajo,
+				'conso_campo' => $campo, 'conso_comunidad' => $comunidad,
+				'conso_fecha_crea' => $fecha_crea, 'conso_fecha_inicio_cont' => $fecha_ini_cont,
+				'conso_fecha_final_cont' => $fecha_fin_cont*/
+		);
+
+		$this->db->where('conso_id', $conso_id);
+        return $this->db->update('consolidado', $data);
+
+		/*if ($this->db->affected_rows() > 0)
+            return TRUE;
+        else
+        	return FALSE;*/
+
+
+	}
+
   
 }
 

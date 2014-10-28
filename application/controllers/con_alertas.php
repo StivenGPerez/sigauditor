@@ -42,6 +42,11 @@ class Con_alertas extends CI_Controller {
 		$html=$this->load->view('alertas/alertas_ajax',$data,'true');
 		echo $html;
 	}
+
+
+	public function prueba(){
+		$this->load->view('prueba', '', FALSE);
+	}
 }
 
 /* End of file con_alertas.php */

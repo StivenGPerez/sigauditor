@@ -114,7 +114,7 @@
             echo "<tr id='".$value->conso_id."'>";
               echo "<td class='tdtable'>";
                 echo "<a id='myLink' href='javascript:crud_eliminar(".$value->conso_id.");'><i class='glyphicon glyphicon-remove'></i></a> ";
-                echo "<a id='myLink' href='javascript:crud_actualizar(".$value->conso_id.");'><i class='glyphicon glyphicon-pencil'></i></a> ";
+                echo "<a id='myLink' href='javascript:crud_buscar(".$value->conso_id.");'><i class='glyphicon glyphicon-pencil'></i></a> ";
                 echo "<i class='glyphicon glyphicon-search'></i> ";
               echo "</td>";
               echo "<td class='tdtable'>".$value->conso_subcontratista."</td>";

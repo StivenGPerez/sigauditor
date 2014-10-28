@@ -18,7 +18,7 @@ class Con_consolidado extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-
+ 
     //Carga las interventorias de una empresa en un select
     public function selec_interventoria(){
         $emp_id=$this->input->post('emp_id');
@@ -329,7 +329,10 @@ echo $objWriter->save('php://output');
             "sp"=>$datos[0]->conso_sp,
             "fecha_crea"=>$datos[0]->conso_fecha_crea_per,
             "fecha_ini_cont"=>$datos[0]->conso_fecha_inicio_cont,
-            "fecha_fin_cont"=>$datos[0]->conso_fecha_final_cont
+            "fecha_fin_cont"=>$datos[0]->conso_fecha_final_cont,
+            "frente_trabajo"=>$datos[0]->conso_frente_trabajo,
+            "campo"=>$datos[0]->conso_campo,
+            "comunidad"=>$datos[0]->conso_comunidad_rem
         );
 
         print_r(json_encode($persona));
@@ -339,6 +342,32 @@ echo $objWriter->save('php://output');
         $conso_id=$this->input->get('conso_id');
 
         $confirm=$this->mod_consolidado->crud_eliminar($conso_id);
+        print_r(json_encode($confirm));
+    }
+
+
+     public function crud_actualizar(){
+
+        $conso_id=$this->input->get('conso_id');
+        $nombre = $this->input->get('nombre'); 
+        /*$lug_nac = $this->input->get('lug_nac'); 
+        $cedula = $this->input->get('cedula'); 
+        $ced_exp = $this->input->get('ced_exp'); 
+        $cargo = $this->input->get('cargo'); 
+        $per_sol = $this->input->get('per_sol'); 
+        $tp_mobra = $this->input->get('tp_mobra'); 
+        $tp_contrato = $this->input->get('tp_contrato'); 
+        $base_org = $this->input->get('base_org'); 
+        $paso_rsc = $this->input->get('paso_rsc'); 
+        $sp = $this->input->get('sp'); 
+        $frente_trabajo = $this->input->get('frente_trabajo'); 
+        $campo = $this->input->get('campo'); 
+        $comunidad = $this->input->get('comunidad'); 
+        $fecha_crea = $this->input->get('fecha_crea'); 
+        $fecha_ini_cont = $this->input->get('fecha_ini_cont'); 
+        $fecha_fin_cont = $this->input->get('fecha_fin_cont');*/ 
+
+        $confirm=$this->mod_consolidado->crud_actualizar($conso_id, $nombre);
         print_r(json_encode($confirm));
     }
 
