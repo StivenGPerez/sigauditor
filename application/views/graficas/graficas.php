@@ -60,12 +60,12 @@
 
 			
 			<div class="row">
-				<div class="col-lg-12"><div id="top_20_moc" style="width:100%; height:350px; display: none;"></div></div>
-				<div class="col-lg-12"><div id="veredas_rem" style="width:100%; height:350px; display: none;"></div></div>
+				<div class="col-lg-12"><div id="top_20_moc" style="width:100%; height:350px;"></div></div>
+				<div class="col-lg-12"><div id="veredas_rem" style="width:100%; height:350px;"></div></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6"><div id="dis_per_act" style="width:100%; height:500px; display: none;"></div></div>
-				<div class="col-lg-6"><div id="dis_tp_mobra" style="width:100%; height:400px; display: none;"></div></div>
+				<div class="col-lg-6"><div id="dis_per_act" style="width:100%; height:500px;"></div></div>
+				<div class="col-lg-6"><div id="dis_tp_mobra" style="width:100%; height:400px;"></div></div>
 			</div>
 			
 

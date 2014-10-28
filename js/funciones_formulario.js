@@ -47,7 +47,7 @@ function insertar_empleado(frm)
      if(con_lug_nac !=0){
       if(con_cargo !=0){
        if(con_per_sol !=0){
-        if(con_tp_mobra !=0){
+        if(con_tp_mobra !=0){ 
          if(con_tp_contrato !=0){
           if(con_fech_icontrato !=0){
            if(con_fech_fcontrato !=0){ 
@@ -80,7 +80,6 @@ function insertar_empleado(frm)
    }else{alert("Debe Ingresar El Nombre Del Empleado.");}
   }else{alert("Debe Ingresar Un Empleador.");}
 }
-
 
 function enviar_contratista()
 {
