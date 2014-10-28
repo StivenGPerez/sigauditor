@@ -16,7 +16,7 @@ class Con_alertas extends CI_Controller {
 		$this->load->view('alertas/alertas',$data);
 		$this->load->view('footer');
 	}
-
+ 
 
 	public function selec_interventoria(){
         $emp_id=$this->input->post('emp_id');

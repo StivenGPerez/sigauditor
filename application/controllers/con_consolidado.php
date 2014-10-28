@@ -309,6 +309,26 @@ echo $objWriter->save('php://output');
 
 
 
+    public function crud_buscar(){
+        $conso_id=$this->input->get('conso_id');
+
+        $datos=$this->mod_consolidado->crud_buscar($conso_id);
+        //print_r(json_encode($datos));
+        $miArray = array("nombre"=>$datos[0]->conso_nombre, "cedula"=>$datos[0]->conso_cedula);
+        print_r(json_encode($miArray));
+    }
+
+    public function crud_eliminar(){
+        $conso_id=$this->input->get('conso_id');
+
+        $confirm=$this->mod_consolidado->crud_eliminar($conso_id);
+        print_r(json_encode($confirm));
+    }
+
+
+
+
+
 } 
 
 /* End of file con_consolidado.php */

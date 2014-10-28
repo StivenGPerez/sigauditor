@@ -16,7 +16,7 @@
     </div>
     <div id="alerta1" class="panel-collapse collapse">
     <div class="panel-body">
-         
+          
       <div class="scroll">
         <table class="table table-hover table-condensed">
           <tbody>
@@ -90,7 +90,7 @@
         <table class="table table-hover table-condensed">
           <tbody>
             <tr>
-              <th class="tdtable">#</th>
+              <th class="tdtable">Funciones</th>
               <th class="tdtable">SubContratista</th>
               <th class="tdtable">Nombre</th>
               <th class="tdtable">Lug. Nac.</th>
@@ -111,8 +111,12 @@
           </tbody>
           
           <?php foreach ($alerta2 as $key => $value){
-            echo "<tr>";
-              echo "<td class='tdtable'>".($key+1)."</td>";
+            echo "<tr id='".$value->conso_id."'>";
+              echo "<td class='tdtable'>";
+                echo "<a id='myLink' href='javascript:crud_eliminar(".$value->conso_id.");'><i class='glyphicon glyphicon-remove'></i></a> ";
+                echo "<a id='myLink' href='javascript:crud_actualizar(".$value->conso_id.");'><i class='glyphicon glyphicon-pencil'></i></a> ";
+                echo "<i class='glyphicon glyphicon-search'></i> ";
+              echo "</td>";
               echo "<td class='tdtable'>".$value->conso_subcontratista."</td>";
               echo "<td class='tdtable'>".$value->conso_nombre."</td>";
               echo "<td class='tdtable'>".$value->conso_lug_nac."</td>";

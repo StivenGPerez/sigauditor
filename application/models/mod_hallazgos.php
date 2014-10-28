@@ -29,9 +29,13 @@ public function veredas_remitieron_monc_que_pasaron_rsc($inter_id){
 }
 
 
+public function empleados_moc_sin_rsc($inter_id){
+	
+	$query = $this->db->query("SELECT * from consolidado where conso_tp_mobra='MOC' and conso_paso_rsc='NO' and inter_id='$inter_id'");
+		return $query->result();
+}
 
-
-
+ 
 
 
 }

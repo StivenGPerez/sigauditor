@@ -29,7 +29,7 @@ class Mod_alertas extends CI_Model {
 		return $query->result();
 }
  
-
+ 
 
  public function cedulas_repetidas($inter_id){
 	

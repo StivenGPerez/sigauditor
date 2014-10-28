@@ -122,3 +122,90 @@ function volver(){
 	if(confirm("Está seguro de volver al menú principal"))
 	window.location.href=baseurl+"index.php/inicio/principal";
 }
+
+
+
+//Como su nombre lo indica es la funcion para eliminar personas sin recargar la pagina
+function crud_eliminar(id){
+	if(confirm("¿Real mente desea eliminar esta persona?")){
+	
+		$.getJSON(baseurl+'index.php/con_consolidado/crud_eliminar', {'conso_id': id}, function(json){
+			document.getElementById(id).style.display = 'none';
+			if(json==true)crud_confirmar.show('Persona eliminada con éxito');
+		});
+	}
+}
+
+function crud_actualizar(id){
+	
+		$.getJSON(baseurl+'index.php/con_consolidado/crud_buscar', {'conso_id': id}, function(json){
+			//alert(json.nombre);
+
+
+			var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
+        '<div class="modal-dialog modal-lg">' +
+            '<div class="modal-content">' +
+                '<div class="modal-header modal-header-info">' +
+                    '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' +
+                    '<h1><i class="glyphicon glyphicon-thumbs-up"></i> <span></span></h1>' +
+                '</div>' +
+                '<div class="modal-body">' +
+
+                '</div>' +
+                '<div class="modal-footer">' +
+                    '<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>');
+
+			$dialog.modal();
+
+		});
+}
+
+
+
+
+
+
+
+
+
+var crud_confirmar = (function ($) {
+
+var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
+        '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+                '<div class="modal-header modal-header-success">' +
+                    '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' +
+                    '<h1><i class="glyphicon glyphicon-thumbs-up"></i> <span></span></h1>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                    '<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>');
+    
+
+	return {
+
+		show: function (message) {
+		
+			if (typeof message === 'undefined') { message = 'Loading'; }
+			$dialog.find('span').text(message);
+			// Opening dialog
+			$dialog.modal();
+		},
+		/**
+		 * Closes dialog
+		 */
+		hide: function () {
+			$dialog.modal('hide');
+		}
+	}
+
+})(jQuery);

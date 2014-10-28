@@ -13,6 +13,10 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/diseño_menu_principal.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap-select.min.css">
+
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/crud_propio.css">
+
+        
         
     </head>
     <body>

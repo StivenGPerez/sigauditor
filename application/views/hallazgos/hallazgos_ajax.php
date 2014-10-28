@@ -7,11 +7,8 @@
           isset($hallazgo5) and count($hallazgo5)==0 and
           isset($hallazgo6) and count($hallazgo6)==0
   ){ 
-
-
       echo "<strong>No existe información de esta empresa en la base de datos</strong>";
     }else{ 
-
 
 ?>
 
@@ -32,7 +29,7 @@
         <table class="table table-hover">
           <tbody>
             <tr>
-              <th class="tdtable">#</th>
+              <th class="tdtable"></th>
               <th class="tdtable">Nombre</th>
               <th class="tdtable">Cedula</th>
               <th class="tdtable">Mano de Obra</th>
@@ -116,7 +113,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Personal MONC que si paso por RSC y comunidad que lo remitió inconcluso <span class="badge badge-danger"><?php if(isset($hallazgo3)) echo count($hallazgo3); else echo "0"; ?> Hallazgos</span>
+          Personal MOC que NO paso por RSC<span class="badge badge-danger"><?php if(isset($hallazgo3)) echo count($hallazgo3); else echo "0"; ?> Hallazgos</span>
         </a>
       </h4>
     </div>

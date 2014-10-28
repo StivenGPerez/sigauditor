@@ -17,7 +17,7 @@ class Con_hallazgos extends CI_Controller {
 		$this->load->view('hallazgos/hallazgos',$data);
 		$this->load->view('footer');
 	}
-
+ 
 
 	public function selec_interventoria(){
         $emp_id=$this->input->post('emp_id');
@@ -38,7 +38,7 @@ class Con_hallazgos extends CI_Controller {
 		//echo "hola";
 		$data['hallazgo1']=$this->mod_hallazgos->monc_no_paso_por_rsc($inter_id);
 		$data['hallazgo2']=$this->mod_hallazgos->moc_no_paso_por_rsc($inter_id);
-		//$data['hallazgo3']=$this->mod_hallazgos->monc_si_paso_por_rsc_origen_vacio($emp_id);
+		//$data['hallazgo3']=$this->mod_hallazgos->empleados_moc_sin_rsc($emp_id);
 		//$data['hallazgo4']=$this->mod_hallazgos->activos_andromeda_informacion_faltante($emp_id);
 		$data['hallazgo5']=$this->mod_hallazgos->top_20_cargos($inter_id);
 		$data['hallazgo6']=$this->mod_hallazgos->veredas_remitieron_monc_que_pasaron_rsc($inter_id);
