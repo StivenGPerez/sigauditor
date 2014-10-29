@@ -22,7 +22,7 @@ function invalidateGenericLoading() {
 }
 //-------------------------------------------------------------------------------------------------
 
-//esta funcion es para dar estilos al select de busqueda
+//esta funcion es para dar estilos al select de busquedas
 $(".chosen-select").chosen({disable_search_threshold: 10});
 
 
