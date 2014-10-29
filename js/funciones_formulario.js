@@ -1,4 +1,4 @@
-$( ".select" ).selectpicker();
+
 
 function list_municipios()
 {
@@ -108,3 +108,5 @@ function enviar_contratista()
     
   }
 }
+
+

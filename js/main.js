@@ -22,7 +22,8 @@ function invalidateGenericLoading() {
 }
 //-------------------------------------------------------------------------------------------------
 
-
+//esta funcion es para dar estilos al select de busqueda
+$(".chosen-select").chosen({disable_search_threshold: 10});
 
 
 //esta funcion es para el modal cargando que aparece al utilizar funciones ajax
@@ -301,3 +302,6 @@ var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog
 	}
 
 })(jQuery);
+
+
+

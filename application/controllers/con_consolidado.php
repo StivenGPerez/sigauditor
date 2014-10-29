@@ -372,7 +372,12 @@ echo $objWriter->save('php://output');
     }
 
 
-
+    public function prueba(){
+        $this->load->view('header');
+        $this->load->view('barra_informacion');
+        $this->load->view('prueba');
+        $this->load->view('footer');
+    }
 
 
 } 
