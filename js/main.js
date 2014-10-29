@@ -142,26 +142,29 @@ function crud_actualizar(id){
 	if(confirm("¿Confirma la actualización los datos?")){
 
 	
-	var nombre=document.getElementById('conso_nombre').value;
-	var lug_nac=$("#lug_nac").attr("value");
-	var cedula=$("#cedula").attr("value");
-	var ced_exp=$("#ced_exp").attr("value");
-	var cargo=$("#cargo").attr("value");
-	var per_sol=$("#per_sol").attr("value");
-	var tp_mobra=$("#tp_mobra").attr("value");
-	var tp_contrato=$("#tp_contrato").attr("value");
-	var base_org=$("#base_org").attr("value");
-	var paso_rsc=$("#paso_rsc").attr("value");
-	var sp=$("#sp").attr("value");
-	var frente_trabajo=$("#frente_trabajo").attr("value");
-	var campo=$("#campo").attr("value");
-	var comunidad=$("#comunidad").attr("value");
-	var fecha_crea=$("#fecha_crea").attr("value");
-	var fecha_ini_cont=$("#fecha_ini_cont").attr("value");
-	var fecha_fin_cont=$("#fecha_fin_cont").attr("value");
-alert(nombre);
+	var nombre=document.getElementById('nombre').value;
+	var lug_nac=document.getElementById('lug_nac').value			
+	var cedula=document.getElementById('cedula').value			
+	var ced_exp=document.getElementById('ced_exp').value			
+	var cargo=document.getElementById('cargo').value			
+	var per_sol=document.getElementById('per_sol').value			
+	var tp_mobra=document.getElementById('tp_mobra').value			
+	var tp_contrato=document.getElementById('tp_contrato').value			
+	var base_org=document.getElementById('base_org').value			
+	var paso_rsc=document.getElementById('paso_rsc').value			
+	var sp=document.getElementById('sp').value			
+	var frente_trabajo=document.getElementById('frente_trabajo').value			
+	var campo=document.getElementById('campo').value			
+	var comunidad=document.getElementById('comunidad').value			
+	var fecha_crea=document.getElementById('fecha_crea').value			
+	var fecha_ini_cont=document.getElementById('fecha_ini_cont').value			
+	var fecha_fin_cont=document.getElementById('fecha_fin_cont').value			
+
 		$.getJSON(baseurl+'index.php/con_consolidado/crud_actualizar', 
-				{'nombre': nombre, 'conso_id': id}, 
+				{'nombre': nombre, 'conso_id': id, 'lug_nac': lug_nac, 'cedula': cedula, 'ced_exp': ced_exp, 'cargo': cargo, 'per_sol': per_sol,
+				'tp_mobra': tp_mobra, 'tp_contrato': tp_contrato, 'base_org': base_org, 'paso_rsc': paso_rsc, 'sp': sp,
+				'frente_trabajo': frente_trabajo, 'campo': campo/*, 'comunidad': comunidad, 'fecha_crea': fecha_crea, 
+				'fecha_ini_cont': fecha_ini_cont, 'fecha_fin_cont': fecha_fin_cont*/}, 
 		function(json){
 			//document.getElementById(id).style.display = 'none';
 			//if(json==true)crud_confirmar.show('Persona actualizada con éxito');
@@ -187,7 +190,7 @@ var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog
                 	'<table class="table">' +
 						'<tr>' +
 							'<td align="right"><strong>Nombre:</strong></td>' +
-							'<td><input type="text" name="conso_nombre" id="conso_nombre" class="form-control" value="'+json.nombre+'" size="" style="width:100%"></td>' +
+							'<td><input type="text" name="nombre" id="nombre" class="form-control" value="'+json.nombre+'" size="" style="width:100%"></td>' +
 							'<td align="right"><strong>Lugar Nacimiento:</strong></td>' +
 							'<td><input type="text" name="lug_nac" id="lug_nac" class="form-control" value="'+json.lug_nac+'" size="" style="width:100%"></td>' +
 						'</tr>' +
@@ -302,6 +305,3 @@ var $dialog = $('<div class="modal fade" id="success" tabindex="-1" role="dialog
 	}
 
 })(jQuery);
-
-
-

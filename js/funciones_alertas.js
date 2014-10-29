@@ -1,3 +1,4 @@
+//selecciona y crea el select con las interventorias de una empresa
 function consecutivos_alertas(){
     //alert("hola");
 

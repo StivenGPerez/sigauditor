@@ -350,7 +350,7 @@ echo $objWriter->save('php://output');
 
         $conso_id=$this->input->get('conso_id');
         $nombre = $this->input->get('nombre'); 
-        /*$lug_nac = $this->input->get('lug_nac'); 
+        $lug_nac = $this->input->get('lug_nac'); 
         $cedula = $this->input->get('cedula'); 
         $ced_exp = $this->input->get('ced_exp'); 
         $cargo = $this->input->get('cargo'); 
@@ -362,21 +362,15 @@ echo $objWriter->save('php://output');
         $sp = $this->input->get('sp'); 
         $frente_trabajo = $this->input->get('frente_trabajo'); 
         $campo = $this->input->get('campo'); 
-        $comunidad = $this->input->get('comunidad'); 
+        /*$comunidad = $this->input->get('comunidad'); 
         $fecha_crea = $this->input->get('fecha_crea'); 
         $fecha_ini_cont = $this->input->get('fecha_ini_cont'); 
-        $fecha_fin_cont = $this->input->get('fecha_fin_cont');*/ 
+        $fecha_fin_cont = $this->input->get('fecha_fin_cont');*/
 
-        $confirm=$this->mod_consolidado->crud_actualizar($conso_id, $nombre);
+        $confirm=$this->mod_consolidado->crud_actualizar($conso_id, $nombre, $lug_nac, $cedula, $ced_exp, $cargo, $per_sol,
+                                        $tp_mobra, $tp_contrato, $base_org, $paso_rsc, $sp, $frente_trabajo, $campo/*, $comunidad,
+                                        $fecha_crea, $fecha_ini_cont, $fecha_fin_cont*/);
         print_r(json_encode($confirm));
-    }
-
-
-    public function prueba(){
-        $this->load->view('header');
-        $this->load->view('barra_informacion');
-        $this->load->view('prueba');
-        $this->load->view('footer');
     }
 
 

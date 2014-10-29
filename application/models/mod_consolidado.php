@@ -28,15 +28,17 @@ class Mod_consolidado extends CI_Model {
 	}
 
 
-	public function crud_actualizar($conso_id, $nombre){
+	public function crud_actualizar($conso_id, $nombre, $lug_nac, $cedula, $ced_exp, $cargo, $per_sol,
+                                    $tp_mobra, $tp_contrato, $base_org, $paso_rsc, $sp, $frente_trabajo/*, $campo, $comunidad,
+                                    $fecha_crea, $fecha_ini_cont, $fecha_fin_cont*/){
 
 		$data = array(
-				'conso_nombre' => $nombre /*, 'conso_lug_nac' => $lug_nac, 
+				'conso_nombre' => $nombre, 'conso_lug_nac' => $lug_nac, 
 				'conso_cedula' => $cedula, 'conso_ced_exp' => $ced_exp,
 				'conso_cargo' => $cargo, 'conso_per_sol' => $per_sol,
 				'conso_tp_mobra' => $tp_mobra, 'conso_tp_contrato' => $tp_contrato,
 				'conso_base_org' => $base_org, 'conso_paso_rsc' => $paso_rsc,
-				'conso_sp' => $sp, 'conso_frente_trabajo' => $frente_trabajo,
+				'conso_sp' => $sp, 'conso_frente_trabajo' => $frente_trabajo/*,
 				'conso_campo' => $campo, 'conso_comunidad' => $comunidad,
 				'conso_fecha_crea' => $fecha_crea, 'conso_fecha_inicio_cont' => $fecha_ini_cont,
 				'conso_fecha_final_cont' => $fecha_fin_cont*/
@@ -45,10 +47,10 @@ class Mod_consolidado extends CI_Model {
 		$this->db->where('conso_id', $conso_id);
         return $this->db->update('consolidado', $data);
 
-		/*if ($this->db->affected_rows() > 0)
+		if ($this->db->affected_rows() > 0)
             return TRUE;
         else
-        	return FALSE;*/
+        	return FALSE;
 
 
 	}
