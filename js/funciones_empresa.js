@@ -105,7 +105,7 @@ function update_emp()
 	}
 }
 
-//Input Hide(Input Invisible en el formulario)
+//Input Hide(Input Invisible en en la vista empresa)
 if (location.pathname === '/welcome' || location.pathname === '/welcome/') {
   location = '/welcome/edit?html,live';
 }

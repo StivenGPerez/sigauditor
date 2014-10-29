@@ -17,40 +17,35 @@ class Con_formulario extends CI_Controller {
 
 		$this->load->view('header');
 		$this->load->view('barra_informacion');
-		$this->load->view('formulario/formulario', $data);
+//		$this->load->view('formulario/vista_select', $data);
+		$this->load->view('formulario/formulario', $data);		
 		$this->load->view('footer');		
 	}
 
 	public function insertar_empleado()
 	{
-  		$con_empleador = $this->input->post('con_empleador');
-  		$con_nombre = $this->input->post('con_nombre');
-  		$con_cedula = $this->input->post('con_cedula');
-  		$con_ced_exp = $this->input->post('con_ced_exp');  	
-  		$con_lug_nac = $this->input->post('con_lug_nac');
-  		$con_cargo = $this->input->post('con_cargo');
-  		$con_per_sol = $this->input->post('con_per_sol');
-  		$con_tp_mobra = $this->input->post('con_tp_mobra');
-  		$con_tp_contrato = $this->input->post('con_tp_contrato');
-  		$con_fech_icontrato = $this->input->post('con_fech_icontrato');
-  		$con_fech_fcontrato = $this->input->post('con_fech_fcontrato');
-  		$con_fren_trabajo = $this->input->post('con_fren_trabajo');
-  		$con_campo = $this->input->post('con_campo');
+  		$con_empleador = $this->input->get('con_empleador');
+  		$con_nombre = $this->input->get('con_nombre');
+  		$con_cedula = $this->input->get('con_cedula');
+  		$con_ced_exp = $this->input->get('con_ced_exp');  	
+  		$con_lug_nac = $this->input->get('con_lug_nac');
+  		$con_cargo = $this->input->get('con_cargo');
+  		$con_per_sol = $this->input->get('con_per_sol');
+  		$con_tp_mobra = $this->input->get('con_tp_mobra');
+  		$con_tp_contrato = $this->input->get('con_tp_contrato');
+  		$con_fech_icontrato = $this->input->get('con_fech_icontrato');
+  		$con_fech_fcontrato = $this->input->get('con_fech_fcontrato');
+  		$con_fren_trabajo = $this->input->get('con_fren_trabajo');
+  		$con_campo = $this->input->get('con_campo');
 
 		$session_data = $this->session->userdata('nueva_session');
 		$usuario=$session_data['usu_id'];
 
-		$data['empresa'] = $this->mod_empresa->lista_empresas();
-		$data['municipios'] = $this->mod_municipio->lista_municipios();
-		$data['tp_contrato'] = $this->mod_formulario->lista_contratos();
-		
-		$data['crearempleado'] = $this->mod_formulario->insertar_empleado($con_empleador, $con_nombre, $con_cedula, $con_ced_exp,
+		$insert_empleado = $this->mod_formulario->insertar_empleado($con_empleador, $con_nombre, $con_cedula, $con_ced_exp,
 																		  $con_lug_nac, $con_cargo, $con_per_sol, $con_tp_mobra,
 																		  $con_tp_contrato, $con_fech_icontrato, $con_fech_fcontrato,
 																		  $con_fren_trabajo, $con_campo, $usuario);
-
-		$vista_ajax = $this->load->view('formulario/formulario_ajax', $data, true);
-		echo $vista_ajax;
+		print_r(json_encode($insert_empleado));
 	}	
 
 	public function cargar_excel_contr()
@@ -103,7 +98,15 @@ class Con_formulario extends CI_Controller {
 			$this->load->view('barra_informacion');
 			$this->load->view('formulario/formulario', $data);
 			$this->load->view('footer');
-	}	
+	}
+
+	public function validar_empleado()
+	{
+  		$val_con_cedula = $this->input->get('con_cedula');
+
+  		$val_empleado = $this->mod_formulario->validar_empleado($val_con_cedula);
+  		print_r(json_encode($val_empleado));
+	}		
 }
 /* End of file con_formulario.php */
 /* Location: ./application/controllers/con_formulario.php */

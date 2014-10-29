@@ -20,17 +20,17 @@
             <div id="funciones_form">
             <div id="lista_empresas">  
                 <form action="<?php echo base_url(); ?>index.php/con_formulario/insertar_empleado" name="form1" id="form1" method="post" class="form-inline" role="form">                                        
-                    <label for="">Empleador</label>  
-
-                    <select onchange="list_empresa();" id="emp_id_v" class="form-control" Tabindex="1"> <!-- Variable con_empleador-->
-                        <option selected value="-1"> </option>
+                    
+                  <label for="">Empleador</label>  
+                    <select class="form-control" id="emp_id_v" name="emp_id_v" Tabindex="1" >
+                        <option selected value="-1" disabled="disabled">Seleccione Empresa </option>
                         <?php 
-                        foreach ($empresa as $key => $value):
-                            echo "<option value=".$value->emp_id.">".$value->emp_nombre."</option>";
+                        foreach ($empresa as $nom_empresa):
+                            echo "<option value=".$nom_empresa->emp_id.">".$nom_empresa->emp_nombre."</option>";
                         endforeach 
                         ?>
                     </select>
-          
+
                         <div class="row">
                             <div class="col-lg-4">
                                 <table class="table">
@@ -41,19 +41,22 @@
                                     <tr>
                                         <td><label for="">Lugar Nacimiento </label></td>
                                         <td>
-                                            <select class="select form-control" data-live-search="true" id="select_mun_nac" data-width="190px" Tabindex="5"> <!-- Variable con_lug_nac-->
+                                           <select class="chosen-select" id="select_mun_nac" Tabindex="5" style="width: 190px;">
+                                                <option selected value="-1" disabled="disabled">Lugar Nacimiento </option>
+
                                                 <?php 
                                                 foreach ($municipios as $key => $value):
                                                     echo "<option value=".$value->mun_id.">".$value->mun_nombre."</option>";
                                                 endforeach 
                                                 ?>
-                                            </select>                                             
+                                            </select>                                               
                                         </td>                                    
                                     </tr>
                                     <tr>
                                         <td><label for="">Mano De Obra </label></td>
                                         <td>
                                             <select class="form-control" id="con_tp_mobra" Tabindex="8">
+                                            <option selected value="-1" disabled="disabled">Mano de Obra</option>
                                             <option value="1">MOC</option>
                                             <option value="2">MONC</option>  
                                             </select>
@@ -70,7 +73,7 @@
                                     <tr>
                                         <td><label id="field_con_cedula">Cedula </label></td>
                                         <td>
-                                        <input name="con_cedula" Tabindex="3" class="form-control input" placeholder="cedula" type="text" id="con_cedula" validate="[{type:'required'},{type:'integer'}]"></td>
+                                        <input name="con_cedula" Tabindex="3" onBlur="validar_cedula();" class="form-control input" placeholder="cedula" type="text" id="con_cedula" validate="[{type:'required'},{type:'integer'}]"></td>
                                     </tr>
                                     <tr>
                                         <td><label for="">Cargo </label></td>
@@ -79,13 +82,14 @@
                                     <tr>
                                         <td><label for="">Tipo Contrato: </label></td>
                                             <td>
-                                            <select class="selectpicker" Tabindex="9" id="con_tp_contrato" data-width="190px"> <!-- Variable con_lug_nac-->
+                                            <select class="chosen-select" Tabindex="9" id="con_tp_contrato" style="width: 190px;"> 
+                                                <option selected value="-1" disabled="disabled">Seleccione Contrato</option>
                                                 <?php 
                                                 foreach ($tp_contrato as $key => $value):
                                                     echo "<option value=".$value->tp_contrato_id.">".$value->tp_contrato_nombre."</option>";
                                                 endforeach 
                                                 ?>
-                                            </select>
+                                            </select>  
                                             </td>
                                     </tr>
                                     <tr>
@@ -99,7 +103,8 @@
                                     <tr>
                                         <td><label for="">Lugar Expedición </label></td>
                                         <td>
-                                            <select class="selectpicker" Tabindex="4" data-live-search="true" id="select_mun_exp" data-width="190px"> <!-- Variable con_ced_exp-->
+                                            <select class="chosen-select" Tabindex="4" id="select_mun_exp" style="width: 190px;"> 
+                                                <option selected value="-1" disabled="disabled">Lugar Expedición </option>
                                                 <?php 
                                                 foreach ($municipios as $key => $value):
                                                     echo "<option value=".$value->mun_id.">".$value->mun_nombre."</option>";
@@ -132,7 +137,7 @@
                 </form>
                 <form action="<?php echo base_url(); ?>index.php/con_formulario/cargar_excel_contr" name="form_con" id="form_con" method='post' enctype="multipart/form-data">
                     <input type="file" name="ruta_contratista" id="ruta_contratista"><button type="button" name="button_con" class="btn btn-primary active" onclick="enviar_contratista();"><i class="glyphicon glyphicon-floppy-open"></i> CARGAR ARCHIVO</button>
-                    <bottom type="buttom" id="formulario_excel" class="btn btn-primary active" onclick="location.href='<?php echo base_url(); ?>documentos/Planilla_excel.xlsx'">DESCARGAR FORMULARIO EXCEL</bottom>   
+                    <bottom type="buttom" id="formulario_excel" class="btn btn-primary active" onclick="location.href='<?php echo base_url(); ?>documentos/Planilla_excel.xlsx'"><i class="glyphicon glyphicon-download-alt"></i> DESCARGAR FORMULARIO EXCEL</bottom>   
                 </form>                 
             </div>
             </div>
@@ -144,10 +149,10 @@
                 </div>
             </div>
 
-	    </div>
+        </div>
                     
         <div class="panel-footer">
-		<button type="button" class="btn btn-hot text-uppercase btn-block" onclick="javascript:volver();">
+        <button type="button" class="btn btn-hot text-uppercase btn-block" onclick="javascript:volver();">
             <i class="glyphicon glyphicon-chevron-left"></i>
              Volver 
         </button>
@@ -155,6 +160,3 @@
 
     </div>
 </div>
-
-
-

@@ -1,5 +1,4 @@
 
-
 function list_municipios()
 {
 	var mun_id_nac = document.getElementById('select_mun_nac').value;
@@ -43,11 +42,11 @@ function insertar_empleado(frm)
 
   if(con_empleador != '-1'){
    if(con_nombre != 0){
-    if(con_ced_exp !=0){
-     if(con_lug_nac !=0){
+    if(con_ced_exp != '-1'){
+     if(con_lug_nac != '-1'){
       if(con_cargo !=0){
        if(con_per_sol !=0){
-        if(con_tp_mobra !=0){ 
+        if(con_tp_mobra != '-1'){ 
          if(con_tp_contrato !=0){
           if(con_fech_icontrato !=0){
            if(con_fech_fcontrato !=0){ 
@@ -55,17 +54,26 @@ function insertar_empleado(frm)
              if(con_campo !=0){
               if( confirm('Esta seguro de registrar los datos') && validator(frm)){
 
-                $.post(baseurl+'index.php/con_formulario/insertar_empleado', {'con_empleador':con_empleador, 'con_nombre':con_nombre,
+                $.getJSON(baseurl+'index.php/con_formulario/insertar_empleado', {'con_empleador':con_empleador, 'con_nombre':con_nombre,
                  'con_lug_nac':con_lug_nac, 'con_tp_mobra':con_tp_mobra, 'con_fren_trabajo':con_fren_trabajo, 'con_cedula':con_cedula,
                  'con_cargo':con_cargo, 'con_tp_contrato':con_tp_contrato, 'con_fech_fcontrato':con_fech_fcontrato, 
                  'con_ced_exp':con_ced_exp, 'con_per_sol':con_per_sol, 'con_fech_icontrato':con_fech_icontrato, 'con_campo':con_campo}, //'usuario':usuario, 'check':check, 
 
-                function(data)
+                function(json)
                 {
-                  $('#funciones_form').html(data);
+                  if(json == true)
+                  {
+                    alert('El Empleado Se Registro Con Exito');
+                    document.getElementById('form1').reset();
+                    $('#select_mun_nac').val('-1').trigger('chosen:updated');
+                    $('#con_tp_contrato').val('-1').trigger('chosen:updated');
+                    $('#select_mun_exp').val('-1').trigger('chosen:updated');
+                  }
+                  else
+                  {
+                    return false;
+                  }  
                 });
-
-                alert("El Empleado Se Registro Con Exito");
               }else{return false;}
              }else{alert("Debe Ingresar El Campo.");}
             }else{alert("Debe Ingresar El Frente De Trabajo.");}      
@@ -83,7 +91,6 @@ function insertar_empleado(frm)
 
 function enviar_contratista()
 {
-//  alert("hola");
   var empresa =document.getElementById("emp_id_v").value;
   if(empresa == '-1')
   {
@@ -109,4 +116,16 @@ function enviar_contratista()
   }
 }
 
+function validar_cedula()
+{
+  var con_cedula = document.getElementById('con_cedula').value;
+  if (con_cedula.length != 0)
+  {
+    $.getJSON(baseurl+'index.php/con_formulario/validar_empleado', {'con_cedula': con_cedula}, 
+      function(json)
+      {
+        if(json == true)alert('El empleado ya esta registrado en la base de datos VERIFIQUE');
+      });
+  }
+}
 
